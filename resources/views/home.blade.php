@@ -5,8 +5,8 @@
     <header class="py-5 bg-light border-bottom mb-4">
         <div class="container">
             <div class="text-center my-5">
-                <h1 class="fw-bolder">Welcome to Posts Home!</h1>
-                <p class="lead mb-2">Show all world in one page</p>
+                <h1 class="fw-bolder">@lang('translate.Welcome')!</h1>
+                <p class="lead mb-2">@lang('translate.Show')</p>
                 @if (auth()->check())
                     <a href="{{ route('posts.create') }}" class="btn btn-primary btn-lg">Create New Post</a>
                 @endif

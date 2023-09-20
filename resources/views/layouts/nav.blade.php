@@ -6,6 +6,7 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
@@ -41,6 +42,13 @@
                         </div>
                     </li>
                 @endguest
+                @foreach (config('app.locales') as $key => $value)
+                @if (app()->getLocale() != $key)
+                    <li class="nav-item">
+                        <a class="text-info nav-link" href="{{ LaravelLocalization::getlocalizedurl($key) }}">{{ $key }}</a>
+                    </li>
+                @endif
+            @endforeach
             </ul>
         </div>
     </div>
